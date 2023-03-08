@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#boxone{
+    height: 100vh;
+    display: flex;
+}
+
+aside{
+    width: 200px;
+    background-color: aqua;
+    height: calc(100% - 200px);
+}
+
+main{
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    background-color: red;
+}
+
+footer{
+    height: 200px;
+    background-color: blueviolet;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+} 
