@@ -5,18 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html-css-spotifyweb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    
 </head>
 <body>
     <div id="boxone">
-        <aside>
-            
+        <aside class="flex-col space-b">
+            <div>
+                <img id="logo" class="mb-2em" src="./assets/img/logo.svg" width="80%" alt="">
+                <div>
+                    <span class="flex mb-0-5em">
+                        <img src="./assets/img/home.svg" width="15%" alt="">
+                        <span class="m-l-0-5em">Home</span> 
+                    </span>
+                    <span class="flex mb-0-5em">
+                        <img src="./assets/img/search.svg" width="15%" alt="">
+                        <span class="m-l-0-5em">Cerca</span> 
+                    </span>
+                    <span class="flex mb-2em">
+                        <img src="./assets/img/libreria.svg" width="15%" alt="">
+                        <span class="m-l-0-5em">La tua libreria</span> 
+                    </span>
+                </div>
+                <div>
+                    <h3 class="mb-0-5em color-white"><strong>PLAYLIST</strong></h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-square-plus"></i>
+                            <span class="m-l-0-5em">Crea Playlist</span> 
+                        </li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="boxino">
+                <div class="flex mb-0-5em">
+                    <img src="./assets/img/download.svg" width="10%" alt="">
+                    <span class="m-l-0-5em">Installa app</span> 
+                </div>
+                <hr class="mb-0-5em">
+                <div class="flex">
+                    <img id="profile" src="./assets/img/profile.svg" width="15%" alt="">
+                    <span class="m-l-0-5em">John Doe</span>
+                </div>
+            </div>
         </aside>
         <main>
             
         </main>
-        <footer>
-            
+        <footer class="flex space-b al-it-center">
+            <div id="foot-l" class="flex">
+                <img src="./assets/img/sinister.jpeg" alt="">
+                <div class="m-l-0-5em">
+                    <div><strong>Sinister</strong></div> 
+                    <span>Brano Nome</span>
+                </div>
+                <div class="m-l-0-5em">
+                    <i class="fa-regular fa-heart m-l-0-5em"></i>
+                    <i class="fa-regular fa-folder m-l-0-5em"></i>
+                </div>
+            </div>
+            <div id="foot-m">
+                <div>
+                    <i class="fa-solid fa-shuffle"></i>
+                    <i class="fa-solid fa-backward-step"></i>
+                    <i class="fa-regular fa-circle-play"></i>
+                    <i class="fa-solid fa-forward-step"></i>
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <div class="flex">
+                    <span>0:25</span>
+                    <hr id="hr1">
+                    <span>4:35</span>
+                </div>
+            </div>
+            <div id="foot-r">
+                <div class="flex">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <i class="fa-solid fa-desktop m-l-0-5em"></i>
+                    <i class="fa-solid fa-volume-high m-l-0-5em"></i>
+                    <hr id="hr2">
+                </div>
+            </div>
         </footer>
     </div>
 </body>
