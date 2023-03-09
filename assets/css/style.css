@@ -1,3 +1,4 @@
+/* reset */
 *{
     padding: 0;
     margin: 0;
@@ -16,10 +17,7 @@ img{
 }
 
 
-
-
-
-
+/* utility */
 .flex{
     display: flex;
 }
@@ -61,26 +59,22 @@ img{
     margin-left: 1.2em;
 }
 
+.hidden{
+    display: none;
+}
+
+.scale:hover{
+    transform: scale(1.1);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* misure viewport */
 #boxone{
     height: 100vh;
     display: flex;
 }
 
+/* aside */
 aside{
     width: 200px;
     background-color: black;
@@ -131,25 +125,11 @@ aside ul{
 }
 
 #boxino{
-    position: fixed;
-    bottom: 100px;
-    width: 200px;
-    z-index: 1;
-    background-color: black;
     padding: 1em;
 }
 
 
-
-
-
-
-
-
-
-
-
-
+/* main */
 main{
     width: calc(100% - 200px);
     height: calc(100% - 100px);
@@ -165,6 +145,10 @@ main{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+main span{
+    color: grey;
 }
 
 #btn{
@@ -183,21 +167,53 @@ main{
 #main-menu ul{
     width: 60%;
     margin: auto;
+    color: grey;
+}
+
+#main-menu ul li:hover{
+    color: white;
+    border-bottom: 1px solid greenyellow;
 }
 
 .container-main{
    padding: 0 1em;
+   gap: 1rem;
 }
 
 .card{
     flex-basis: calc(100%/6 - 1rem);
     text-align: center;
     color: white;
+    cursor: pointer;
 }
 
 .card img{
     width: 100%;
     margin: 1em 0;
+}
+
+.card .play{
+    position: relative;
+}
+
+.card .play::after{
+    content: '\f144';
+    font-family: "Font Awesome 6 Free"; 
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.card .play:hover img{
+    opacity: 0.5;
+}
+
+.card .play:hover::after{
+    opacity: 1;
 }
 
 main h2{
@@ -211,25 +227,12 @@ main p{
     color: white;
 }
 
+.radius{
+    border-radius: 50%;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* footer */
 footer{
     height: 100px;
     background-color: #282828;
@@ -239,11 +242,19 @@ footer{
     right: 0;
     z-index: 1;
     padding: 0 1em;
-    color: white;
 } 
 
-footer i{
+footer i,
+footer span{
+    color: grey;
+}
+
+footer span{
     font-size: 1em;
+}
+
+footer i:hover{
+    color: white;
 }
 
 footer img{
@@ -266,54 +277,170 @@ footer img{
 
 #foot-m{
     width: 40%;
-    height: 90%;
     text-align: center;
 }
 
 #foot-m i{
-    font-size: 1em;
+    font-size: 2em;
     margin: 0.5em;
 }
 
-#hr1{
+.hr1{
     width: 80%;
     margin: auto;
     border-radius: 3px;
-    border: 2px solid gray;
-    /* position: relative;
-    z-index: 1; */
+    background-color: gray;
 }
 
-
-/* #hr::after{
-    content: 'asd';
-    position: absolute;
-    background-color: white;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    z-index: 9999;
-} */
+.hr-bianco{
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 3px;
+}
 
 #hr2{
     width: 60%;
     margin: auto;
     border-radius: 3px;
-    border: 2px solid gray;
+    background-color: gray;
 }
 
-@media screen and (max-width: 320px){
-    #hr2{
+
+
+/* media */
+
+/* laptop */
+@media screen and (max-width: 1024px){
+    #main-menu ul{
+        width: 90%;
+    }
+}
+
+/* tablet */
+@media screen and (max-width: 768px){
+    .card{
+        flex-basis: calc(100%/4 - 1rem);
+    }
+    .container-main{
+        justify-content: start;
+        gap: 1rem;
+    }
+    #main-menu ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #main-menu ul li{
+        margin: 10px 0;
+        flex-basis: calc(100%/3 - 10px);
+        justify-content: center;
+        font-size: 10px;
+        text-align: center;
+    }
+    #foot-m i{
+        font-size: 1em;
+    }
+
+}
+
+/* phone s */
+@media screen and (max-width: 425px){
+    aside{
+        width: 150px;
+    }
+    main,
+    #overlay{
+        width: calc(100% - 150px);
+    }
+    #crea-playlist,
+    #crea-playlist a{
+        padding: 0;
+        margin: 0;
+    }
+    #crea-playlist i{
+        margin-right: 5px;
+    }
+    .card{
+        flex-basis: calc(100%/2 - 1rem);
+    }
+    #btn{
+        font-size: 10px;
+        padding: 3px 10px;
+        text-align: center;
+    }
+    #foot-r{
+        width: 10%;
+    }
+    #foot-m{
+        width: 60%;
+    }
+    #foot-l{
+        width: 30%;
+        flex-direction: column;
+        height: 95%;
+        text-align: center;
+    }
+    #foto{
+        width: 50%;
+        margin: auto;
+    }
+    #foot-l-icons{
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    #foot-l-icons i{
+        padding: 0;
+        margin: 0 2px;
+    }
+    .m-q-hidden2{
         display: none;
     }
     .flex-end{
         flex-direction: column;
         align-items: flex-end;
     }
+    #foot-l-icons{
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    #foot-l-icons i{
+        padding: 0;
+        margin: 0 2px;
+    }
+    #foot-r i{
+        margin: 0.2em;
+    } 
+}
+
+
+/* phone xs */
+@media screen and (max-width: 320px){
+    .hidden{
+        display: block;
+        padding: 0.5em;
+    }
+    .aside-icons{
+        width: 90%;
+    }
+    aside{
+        width: 50px;
+    }
+    main{
+        width: calc(100% - 50px);
+    }
+    #overlay{
+        width: calc(100% - 50px);
+    }
+    .m-q-hidden,
+    #logo{
+        display: none;
+    }
     #foot-l{
-        width: 40%;
-        
+        width: 20%;
+    }
+    #foto{
+        width: 100%;
     }
     #foot-m{
         width: 50%;
@@ -321,7 +448,7 @@ footer img{
     #foot-r{
         width: 10%;
     }
-    #foot-r i{
-        margin: 0.2em;
-    }
+    
 }
+
+
