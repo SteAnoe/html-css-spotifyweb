@@ -145,6 +145,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 main span{
@@ -170,9 +171,24 @@ main span{
     color: grey;
 }
 
-#main-menu ul li:hover{
-    color: white;
-    border-bottom: 1px solid greenyellow;
+#main-menu ul li{
+    position: relative;
+}
+
+#main-menu ul li:after{
+    content: '';
+    position: absolute;
+    background-color: greenyellow;
+    height: 2px;
+    width: 40%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+#main-menu ul li:hover::after{
+    opacity: 1;
 }
 
 .container-main{
@@ -196,6 +212,11 @@ main span{
     position: relative;
 }
 
+.aspect-ratio{
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
 .card .play::after{
     content: '\f144';
     font-family: "Font Awesome 6 Free"; 
@@ -213,7 +234,7 @@ main span{
 }
 
 .card .play:hover::after{
-    opacity: 1;
+    opacity: 1; 
 }
 
 main h2{
